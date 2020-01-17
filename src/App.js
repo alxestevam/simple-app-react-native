@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView, Text } from 'react-native';
+import {
+  View, StyleSheet, ScrollView, Text,
+} from 'react-native';
 import './config/ReactotronConfig';
 import './config/ReactDevToolsConfig';
 import Post from './components/Post';
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
 });
 
 const App = () => {
-  const [posts, setPosts] = useState([
+  const [posts] = useState([
     {
       id: Math.random(),
       title: 'Learning Node',
@@ -57,7 +59,7 @@ const App = () => {
       </View>
       <ScrollView>
         <View style={styles.postsContainer}>
-          {posts.map(post => (
+          {posts.map((post) => (
             <Post
               key={post.id}
               title={post.title}
